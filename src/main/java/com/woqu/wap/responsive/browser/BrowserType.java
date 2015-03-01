@@ -19,7 +19,7 @@ public enum BrowserType {
 	 */
 	WOQU_ANDROID_APP,
 	/**
-	 * Represents a WeiXin browser. 
+	 * Represents a WeiXin browser.
 	 */
 	WEIXIN
 }
