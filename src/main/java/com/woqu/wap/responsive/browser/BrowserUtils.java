@@ -22,7 +22,7 @@ public class BrowserUtils {
 	 * @param request the servlet request
 	 * @return the current Browser, or null if no Browser has been resolved for the request
 	 */
-	public static Browser getCurrentDevice(HttpServletRequest request) {
+	public static Browser getCurrentBrowser(HttpServletRequest request) {
 		return (Browser) request.getAttribute(CURRENT_BROWSER_ATTRIBUTE);
 	}
 	
@@ -32,7 +32,7 @@ public class BrowserUtils {
 	 * @param attributes the request attributes
 	 * @return the current Browser, or null if no Browser has been resolved for the request
 	 */
-	public static Browser getCurrentDevice(RequestAttributes attributes) {
+	public static Browser getCurrentBrowser(RequestAttributes attributes) {
 		return (Browser) attributes.getAttribute(CURRENT_BROWSER_ATTRIBUTE, RequestAttributes.SCOPE_REQUEST);
 	}
 }

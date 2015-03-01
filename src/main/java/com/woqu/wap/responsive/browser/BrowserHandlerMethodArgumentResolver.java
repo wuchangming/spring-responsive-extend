@@ -21,7 +21,7 @@ public class BrowserHandlerMethodArgumentResolver implements HandlerMethodArgume
 	public Object resolveArgument(MethodParameter parameter,
 			ModelAndViewContainer mavContainer, NativeWebRequest webRequest,
 			WebDataBinderFactory binderFactory) throws Exception {
-		return BrowserUtils.getCurrentDevice(webRequest);
+		return BrowserUtils.getCurrentBrowser(webRequest);
 	}
 
 }
