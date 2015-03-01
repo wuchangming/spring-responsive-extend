@@ -1,7 +1,7 @@
 package com.woqu.wap.responsive.browser;
 /**
  *  A model for the user agent or device that submitted the current request.  
- *  Callers may introspect this model to vary UI control or rendering logic by device type
+ *  Callers may introspect this model to vary UI control or rendering logic by browser type
  * @author WuChangming
  *
  */
