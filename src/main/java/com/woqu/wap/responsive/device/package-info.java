@@ -2,7 +2,7 @@
  * Public API for mobile device resolution.
  */
 /**
- * @author 
+ * @author wuchangming
  *
  */
 package com.woqu.wap.responsive.device;
