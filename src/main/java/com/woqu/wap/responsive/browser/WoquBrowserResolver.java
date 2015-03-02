@@ -13,7 +13,6 @@ public class WoquBrowserResolver implements BrowserResolver {
 		String userAgent = request.getHeader("User-Agent");
 		
 		if (userAgent != null) {
-			userAgent = userAgent.toLowerCase();
 			// UserAgent keyword detection of iOS APP Browser
 			if (userAgent.contains(WOQU_IOS_APP_KEYWORD)) {
 				return WoquBrowser.WOQU_IOS_APP_INSTANCE;
