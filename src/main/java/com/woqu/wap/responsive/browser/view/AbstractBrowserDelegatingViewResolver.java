@@ -95,7 +95,7 @@ public abstract class AbstractBrowserDelegatingViewResolver extends
 		String browserViewName = getBrowserViewName(viewName);
 		//InternalResourceViewResolver always return a nut null view.here need a file exist checked.
 		View view = delegate.resolveViewName(browserViewName, locale);
-		if(view != null && view.getClass().isAssignableFrom(JstlView.class)){
+		if(view != null && JstlView.class.isAssignableFrom(view.getClass())){
 			JstlView jstlView = (JstlView)view;
 			URL url = getServletContext().getResource(jstlView.getUrl());
 			if(url == null){
