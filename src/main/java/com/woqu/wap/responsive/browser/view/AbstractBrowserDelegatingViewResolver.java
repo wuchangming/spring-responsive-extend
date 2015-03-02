@@ -1,5 +1,6 @@
 package com.woqu.wap.responsive.browser.view;
 
+import java.net.URL;
 import java.util.Locale;
 
 import org.springframework.core.Ordered;
@@ -8,6 +9,7 @@ import org.springframework.web.context.support.WebApplicationObjectSupport;
 import org.springframework.web.servlet.View;
 import org.springframework.web.servlet.ViewResolver;
 import org.springframework.web.servlet.view.InternalResourceViewResolver;
+import org.springframework.web.servlet.view.JstlView;
 
 import com.woqu.wap.responsive.browser.Browser;
 
@@ -91,7 +93,15 @@ public abstract class AbstractBrowserDelegatingViewResolver extends
 	
 	public View resolveViewName(String viewName, Locale locale) throws Exception {
 		String browserViewName = getBrowserViewName(viewName);
+		//InternalResourceViewResolver always return a nut null view.here need a file exist checked.
 		View view = delegate.resolveViewName(browserViewName, locale);
+		if(view != null && view.getClass().isAssignableFrom(JstlView.class)){
+			JstlView jstlView = (JstlView)view;
+			URL url = getServletContext().getResource(jstlView.getUrl());
+			if(url == null){
+				view = null;
+			}
+		}
 		if (enableFallback && view == null) {
 			view = delegate.resolveViewName(viewName, locale);
 		}
