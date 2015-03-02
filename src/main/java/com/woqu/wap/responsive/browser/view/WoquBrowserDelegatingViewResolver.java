@@ -24,9 +24,9 @@ import com.woqu.wap.responsive.browser.BrowserUtils;
  *   </tr>
  *   <tr>
  *     <td>Normal</td>
- *     <td>{@link #setNormalSuffix(String)}</td>
- *     <td>".normal"</td>
- *     <td>"home.normal"</td>
+ *     <td>{@link #setNormalSuffix(String)} 最好不要设置,这样可以让别的browser找不到view时fallback到normal的view</td>
+ *     <td>""</td>
+ *     <td>"home"</td>
  *   </tr>
  *   <tr>
  *     <td>WoquIOSApp</td>
